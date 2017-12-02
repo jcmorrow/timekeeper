@@ -1,4 +1,3 @@
 #!/bin/bash
 
-pipenv shell;
-FLASK_APP="`pwd`/timekeeper.py" flask db migrate && flask db upgrade
+FLASK_APP=`pwd`"/timekeeper.py" flask db migrate && flask db upgrade

@@ -1,4 +1,4 @@
-from timekeeper import db
+from db import db
 
 
 class WorkTimestamp(db.Model):
@@ -6,4 +6,4 @@ class WorkTimestamp(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     file = db.Column(db.String(), nullable=False)
-    file = db.Column(db.DateTime(), nullable=False)
+    time = db.Column(db.DateTime(), nullable=False)

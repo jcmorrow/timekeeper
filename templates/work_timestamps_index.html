@@ -1,0 +1,11 @@
+<html>
+  <body>
+    <table>
+      {% for work_timestamp in work_timestamps %}
+      <tr>
+        <td>{{ work_timestamp.file }}</td><td>{{ work_timestamp.time }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

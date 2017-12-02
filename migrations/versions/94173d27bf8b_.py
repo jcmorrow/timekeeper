@@ -26,6 +26,11 @@ def upgrade():
         ),
         sa.Column(
             'file',
+            sa.String(),
+            nullable=False,
+        ),
+        sa.Column(
+            'time',
             sa.DateTime(),
             nullable=False,
         ),

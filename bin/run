@@ -1,4 +1,3 @@
 #!/bin/bash
 
-pipenv shell;
-FLASK_APP="`pwd`/timekeeper.py" flask run
+FLASK_APP=`pwd`"/app.py" flask run

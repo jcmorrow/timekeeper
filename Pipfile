@@ -11,6 +11,7 @@ flask = "*"
 "psycopg2" = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
+"beautifulsoup4" = "*"
 
 
 [dev-packages]
