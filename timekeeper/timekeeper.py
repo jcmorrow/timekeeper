@@ -1,11 +1,10 @@
-from flask import Flask, render_template
-from db import db
+from flask import Flask
 from views import work_timestamps
 from flask_migrate import Migrate
-from models import WorkTimestamp
 
 
 def create_app():
+    from db import db
     app = Flask(__name__)
     app.config.from_object('config.default')
     app.config.from_envvar('CONFIG_FILE')

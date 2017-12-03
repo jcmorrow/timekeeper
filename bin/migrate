@@ -1,3 +1,5 @@
 #!/bin/bash
 
-FLASK_APP=`pwd`"/timekeeper.py" flask db migrate && flask db upgrade
+source ./env/bin/activate
+
+FLASK_APP=`pwd`"/app.py" flask db migrate && flask db upgrade
