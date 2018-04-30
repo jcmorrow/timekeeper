@@ -1,6 +1,7 @@
 from flask import render_template
 from flask.blueprints import Blueprint
-from models import WorkTimestamp
+
+from .models import WorkTimestamp
 
 work_timestamps = Blueprint('work_timestamps', __name__,
                             template_folder='templates')

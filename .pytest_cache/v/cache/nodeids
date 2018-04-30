@@ -1,4 +1,4 @@
 [
-  "tests/test_import_work_timestamps.py::TestImportWorkTimestamps::test_with_csv",
-  "tests/test_import_work_timestamps.py::TestRequestWithNoData::test_empty_db"
+  "tests/test_add_work_timestamp.py::TestAddWorkTimestamp::test_when_there_are_three_points",
+  "tests/test_add_work_timestamp.py::TestAddWorkTimestamp::test_when_there_are_two_points"
 ]

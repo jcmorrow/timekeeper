@@ -11,8 +11,9 @@ def today_as_string():
 
 
 def compact_work_timestamps(timestamps):
+    SECONDS_IN_A_MINUTE = 60
     times = list(map(datetime_from_time_string, timestamps))
-    MAX_GAP = 5 * 60  # five minutes
+    MAX_GAP = 5 * SECONDS_IN_A_MINUTE
     current_session = []
     sessions = [current_session]
 

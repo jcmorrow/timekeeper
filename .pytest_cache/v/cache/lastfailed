@@ -1,1 +1,3 @@
-{}
+{
+  "tests/test_import_work_timestamps.py": true
+}

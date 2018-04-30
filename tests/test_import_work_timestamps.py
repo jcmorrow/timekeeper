@@ -1,8 +1,8 @@
-import sys
-from os.path import abspath, dirname, join
+# import sys
+# from os.path import abspath, dirname, join
 
-TIMEKEEPER_PATH = abspath(join(dirname(__file__), '../timekeeper'))
-sys.path.insert(0, TIMEKEEPER_PATH)
+# TIMEKEEPER_PATH = abspath(join(dirname(__file__), '../timekeeper'))
+# sys.path.insert(0, TIMEKEEPER_PATH)
 
 from bs4 import BeautifulSoup
 from db import db
@@ -43,8 +43,8 @@ class TestImportWorkTimestamps(TestCase):
         import sys
         print(sys.version)
         csv = StringIO("""
-/foo.py, 14:25:38
-/bar.py, 14:26:02
+/foo.py, 2017-12-03 14:25:38
+/bar.py, 2017-12-03 14:26:02
         """.strip())
 
         work_timestamps = from_csv(csv)

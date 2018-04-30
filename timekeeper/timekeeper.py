@@ -1,10 +1,11 @@
 from flask import Flask
-from views import work_timestamps
 from flask_migrate import Migrate
+
+from .views import work_timestamps
 
 
 def create_app():
-    from db import db
+    from .db import db
     app = Flask(__name__)
     app.config.from_pyfile('config/default.py')
     app.config.from_envvar('CONFIG_FILE')

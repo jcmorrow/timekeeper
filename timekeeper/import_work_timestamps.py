@@ -1,10 +1,12 @@
 import csv
 from datetime import date
-from models import WorkTimestamp
+
+from .models import WorkTimestamp
 
 
 def new_work_timestamp(row):
-    return WorkTimestamp(file=row[0], time=timestamp(row[1].strip()))
+    return WorkTimestamp(file=row[0],
+                         time=timestamp(row[1].split()[1].strip()))
 
 
 def timestamp(time):
