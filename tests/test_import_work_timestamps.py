@@ -1,18 +1,21 @@
-import environment
+import sys
+from os.path import abspath, dirname, join
+
+TIMEKEEPER_PATH = abspath(join(dirname(__file__), '../timekeeper'))
+sys.path.insert(0, TIMEKEEPER_PATH)
+
 from bs4 import BeautifulSoup
-from datetime import date
 from db import db
 from functools import wraps
-from import_work_timestamps import from_csv
+from import_work_timestamps import from_csv, timestamp
 from io import StringIO
 from models import WorkTimestamp
 from timekeeper import create_app
 import unittest
 
 app = create_app()
-app.config['SQLALCHEMY_DATABASE_URI'] = (
-    'postgresql://localhost/timekeeper-test'
-)
+app.config['SQLALCHEMY_DATABASE_URI'] = ('postgresql://'
+                                         'localhost/timekeeper-test')
 app.testing = True
 
 
@@ -35,12 +38,10 @@ def page_content(body):
     return BeautifulSoup(body, 'html.parser').get_text().strip()
 
 
-def timestamp(time_string):
-    return ' '.join([date.today().strftime("%Y/%m/%d"), time_string])
-
-
-class ImportFromCsvTest(TestCase):
+class TestImportWorkTimestamps(TestCase):
     def test_with_csv(self):
+        import sys
+        print(sys.version)
         csv = StringIO("""
 /foo.py, 14:25:38
 /bar.py, 14:26:02
@@ -55,14 +56,10 @@ class ImportFromCsvTest(TestCase):
                          timestamps)
 
 
-class RequestWithNoData(TestCase):
+class TestRequestWithNoData(TestCase):
     @with_app_context
     def test_empty_db(self):
         rv = self.client.get('/')
         content = page_content(rv.data)
         self.assertEqual(content, '')
         self.assertEqual(WorkTimestamp.query.all(), [])
-
-
-if __name__ == '__main__':
-    unittest.main()

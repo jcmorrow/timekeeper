@@ -2,4 +2,4 @@
 
 source ./env/bin/activate
 
-FLASK_APP=`pwd`"/app.py" flask shell
+FLASK_APP=`pwd`"/timekeeper/app.py" flask shell

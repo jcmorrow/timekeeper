@@ -13,6 +13,8 @@ flask-sqlalchemy = "*"
 flask-migrate = "*"
 "beautifulsoup4" = "*"
 "bs4" = "*"
+mamba = "*"
+expects = "*"
 
 
 [dev-packages]

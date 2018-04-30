@@ -1,0 +1,4 @@
+[
+  "tests/test_import_work_timestamps.py::TestImportWorkTimestamps::test_with_csv",
+  "tests/test_import_work_timestamps.py::TestRequestWithNoData::test_empty_db"
+]
